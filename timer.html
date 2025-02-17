@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <title>ফেইজ কাউন্টার</title>
+    <style>
+        .progress-container {
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            gap: 2px;
+            max-width: 800px;
+            margin: 50px auto;
+        }
+
+        .checkpoint {
+            width: 10px;
+            height: 10px;
+            background: #000;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .progress-section {
+            flex: 1;
+            height: 20px;
+            background: #eee;
+            position: relative;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background: #4CAF50;
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+
+        .timer {
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            white-space: nowrap;
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            padding: 2px 5px;
+            background: rgba(0,0,0,0.8);
+            color: white;
+            border-radius: 3px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="progress-container">
+        <div class="checkpoint"></div>
+        <div class="progress-section" id="section1">
+            <div class="progress-bar"></div>
+            <div class="timer"></div>
+        </div>
+        <div class="checkpoint"></div>
+        <div class="progress-section" id="section2">
+            <div class="progress-bar"></div>
+            <div class="timer"></div>
+        </div>
+        <div class="checkpoint"></div>
+        <div class="progress-section" id="section3">
+            <div class="progress-bar"></div>
+            <div class="timer"></div>
+        </div>
+        <div class="checkpoint"></div>
+        <div class="progress-section" id="section4">
+            <div class="progress-bar"></div>
+            <div class="timer"></div>
+        </div>
+        <div class="checkpoint"></div>
+        <div class="progress-section" id="section5">
+            <div class="progress-bar"></div>
+            <div class="timer"></div>
+        </div>
+        <div class="checkpoint"></div>
+    </div>
+
+    <script>
+        const sections = [
+            {
+                start: new Date(2025, 2, 18),
+                end: new Date(2025, 2, 19),
+                progressBar: document.querySelector('#section1 .progress-bar'),
+                timerElement: document.querySelector('#section1 .timer')
+            },
+            {
+                start: new Date(2025, 3, 19),
+                end: new Date(2025, 4, 6),
+                progressBar: document.querySelector('#section2 .progress-bar'),
+                timerElement: document.querySelector('#section2 .timer')
+            },
+            {
+                start: new Date(2025, 4, 7),
+                end: new Date(2025, 5, 1),
+                progressBar: document.querySelector('#section3 .progress-bar'),
+                timerElement: document.querySelector('#section3 .timer')
+            },
+            {
+                start: new Date(2025, 5, 2),
+                end: new Date(2025, 5, 7),
+                progressBar: document.querySelector('#section4 .progress-bar'),
+                timerElement: document.querySelector('#section4 .timer')
+            },
+            {
+                start: new Date(2025, 4, 8),
+                end: new Date(2025, 4, 11),
+                progressBar: document.querySelector('#section5 .progress-bar'),
+                timerElement: document.querySelector('#section5 .timer')
+            }
+        ];
+
+        function updateTimers() {
+            const now = new Date();
+            let activeSection = null;
+
+            sections.forEach(section => {
+                const start = section.start;
+                const end = section.end;
+
+                if (now >= start && now <= end) activeSection = section;
+
+                if (now > end) {
+                    section.progressBar.style.width = '100%';
+                    section.timerElement.style.display = 'none';
+                } else if (now < start) {
+                    section.progressBar.style.width = '0%';
+                    section.timerElement.style.display = 'none';
+                } else {
+                    const total = end - start;
+                    const elapsed = now - start;
+                    section.progressBar.style.width = `${(elapsed / total) * 100}%`;
+                    section.timerElement.style.display = 'block';
+                }
+            });
+
+            if (activeSection) {
+                const remaining = activeSection.end - now;
+                const days = Math.floor(remaining / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((remaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((remaining % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((remaining % (1000 * 60)) / 1000);
+
+                activeSection.timerElement.textContent = 
+                    `${days}দিন ${hours}ঘন্টা ${minutes}মিনিট ${seconds}সেকেন্ড`;
+            }
+        }
+
+        setInterval(updateTimers, 1000);
+        updateTimers();
+    </script>
+</body>
+</html>

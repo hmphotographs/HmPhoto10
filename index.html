@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <title>Progress Counter</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Progress Timer</h1>
+        <div class="progress-container">
+            <div class="progress-bar">
+                <div class="progress-fill" id="progress"></div>
+                <div class="checkpoints">
+                    <span class="dot" style="left: 0%"></span>
+                    <span class="dot" style="left: 25%"></span>
+                    <span class="dot" style="left: 50%"></span>
+                    <span class="dot" style="left: 75%"></span>
+                    <span class="dot" style="left: 100%"></span>
+                </div>
+            </div>
+        </div>
+
+        <div id="countdown-sections"></div>
+    </div>
+    
+    <script src="script.js"></script>
+    <script>
+if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('service-worker.js')
+    .then(() => console.log("Service Worker Registered"));
+}
+</script>
+</body>
+</html>
