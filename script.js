@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
     const stages = [
-        { name: "Phase 1", start: "2025-02-01 00:00:00", end: "2025-03-18 23:59:59" },
+        { name: "Phase 1", start: "2025-03-01 00:00:00", end: "2025-03-18 23:59:59" },
         { name: "Phase 2", start: "2025-03-19 00:00:00", end: "2025-04-06 23:59:59" },
         { name: "Phase 3", start: "2025-04-07 00:00:00", end: "2025-05-01 23:59:59" },
         { name: "Phase 4", start: "2025-05-02 00:00:00", end: "2025-05-07 23:59:59" },
