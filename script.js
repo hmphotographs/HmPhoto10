@@ -146,7 +146,7 @@ function updateUI() {
 // প্রতি সেকেন্ডে আপডেট করুন
 setInterval(updateUI, 1000);
 updateUI(); // প্রাথমিক কল
-});
+
 
 
 /* 3rd */
