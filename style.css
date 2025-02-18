@@ -3,10 +3,11 @@ body {
     text-align: center;
     background-color: #232323;
     color: white;
+    font-weight: ;
 }
 
 .container {
-    margin: 50px auto;
+    margin-top: 30px;
     width: 80%;
 }
 
@@ -80,30 +81,29 @@ body {
             justify-content: center;
             align-items: center;
             text-align: center;
-            min-height: 100vh;
+            min-height: ;
             margin: 0;
         }
 
         .container1 {
             width: 74%;
-            margin: 0 auto;
             background:#000000;
             background-size: 100%;
             background-repeat: no-repeat;
-            opacity: 0.8;
             backdrop-filter: blur(20px);
             padding: 2rem;
             border-radius: 15px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            margin-top: 60px;
+            margin-top: 20px;
             height: 180px;
-            borer: 0.3px solid white;
+            
         }
 
         .phase-indicator {
             text-align: center;
-            color: #444444;
+            color: white;
             margin-bottom: 1rem;
+            margin-top: -0.5rem;
+            background: ;
         }
 
         .active-phase {
@@ -134,11 +134,11 @@ body {
             text-align: center;
             margin: 1.1rem 0;
             color: white;
-            font-weight: 500;
+            font-weight: 600;
         }
 
         .progress-container1 {
-            height: 7px;
+            height: 10px;
             background: #242424;
             border-radius: 3px;
             position: relative;
@@ -155,7 +155,92 @@ body {
             display: flex;
             justify-content: space-between;
             margin-top: 1.3rem;
-            color: gray;
+            color: white;
             font-size: 1rem;
             column-gap: 1rem;
         }
+
+
+
+
+body {
+    background-color: #121212;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.container22 {
+    width: 90%;
+    max-width: 800px;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.hh {
+    margin-bottom: 40px;
+    font-size: 30px;
+    
+}
+
+#counter22{
+    padding: 2px 7px;
+    font-weight: 600;
+    background: red;
+    position: ;
+    font-size: 20px;
+    border-radius: 4px;
+    color: ;
+    
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #1e1e1e;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+th, td {
+    border: 1px solid #333;
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background-color: #333;
+}
+
+td {
+    background-color: #252525;
+}
+
+td {
+    background-color: #252525;
+    padding: 10px;
+    text-align: center;
+    vertical-align: middle; /* টেক্সট সেন্টারে রাখতে */
+    height: 100%; /* স্বাভাবিক উচ্চতা বজায় রাখা */
+    min-height: 18px; /* ন্যূনতম উচ্চতা নির্ধারণ */
+    display: table-cell; /* প্রতিটি টিডিকে সঠিকভাবে টেবিল সেলের মতো আচরণ করানো */
+}
+
+td:empty::before {
+    content: "\00a0"; /* ফাঁকা টিডির মধ্যে non-breaking space (nbsp) যুক্ত করা */
+    display: block;
+    min-height: 18px; /* ন্যূনতম উচ্চতা নির্ধারণ */
+}
+
+/* প্রতিটি Phase-এর নিচে চিকন বর্ডার */
+.ttt {
+    border-bottom: 1.4px solid #555;
+}
+
+/* জোড় সংখ্যা সারিগুলোর ব্যাকগ্রাউন্ড পরিবর্তন */
+tr:nth-child(even) td {
+    background-color: #2c2c2c;
+}
