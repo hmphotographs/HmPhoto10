@@ -148,3 +148,28 @@ setInterval(updateUI, 1000);
 updateUI(); // প্রাথমিক কল
 });
 
+
+/* 3rd */
+
+function updateCounter() {
+    const targetDate = new Date("June 23, 2025 00:00:00").getTime();
+    const now = new Date().getTime();
+    const timeLeft = targetDate - now;
+
+    if (timeLeft <= 0) {
+        document.getElementById("counter22").innerHTML = "Time's up!";
+        return;
+    }
+
+    const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+    document.getElementById("counter22").innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+}
+
+setInterval(updateCounter, 1000);
+updateCounter();
+});
+
