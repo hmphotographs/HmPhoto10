@@ -152,7 +152,7 @@ updateUI(); // প্রাথমিক কল
 /* 3rd */
 
 function updateCounter() {
-    const targetDate = new Date("June 23, 2025 00:00:00").getTime();
+    const targetDate = new Date("June 25, 2025 23:59:59").getTime();
     const now = new Date().getTime();
     const timeLeft = targetDate - now;
 
