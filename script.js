@@ -1,10 +1,10 @@
 document.addEventListener("DOMContentLoaded", function () {
     const stages = [
-        { name: "Phase 1", start: "2025-03-01 00:00:00", end: "2025-03-18 23:59:59" },
-        { name: "Phase 2", start: "2025-03-19 00:00:00", end: "2025-04-08 23:59:59" },
-        { name: "Phase 3", start: "2025-04-09 00:00:00", end: "2025-05-03 23:59:59" },
-        { name: "Phase 4", start: "2025-05-04 00:00:00", end: "2025-05-07 23:59:59" },
-        { name: "Phase 5", start: "2025-05-08 00:00:00", end: "2025-05-11 23:59:59" },
+        { name: "Phase 1", start: "2025-10-19 00:00:00", end: "2025-11-02 23:59:59" },
+        { name: "Phase 2", start: "2025-11-03 00:00:00", end: "2025-11-25 23:59:59" },
+        { name: "Phase 3", start: "2025-11-26 00:00:00", end: "2025-12-19 23:59:59" },
+        { name: "Phase 4", start: "2025-12-20 00:00:00", end: "2026-01-30 23:59:59" },
+        { name: "Phase 5", start: "2026-01-31 00:00:00", end: "2025-01-31 23:59:59" },
     ];
 
     const countdownContainer = document.getElementById("countdown-sections");
@@ -69,11 +69,11 @@ document.addEventListener("DOMContentLoaded", function () {
     
     // ফেজ ডেটা (আপনার দেওয়া তারিখ এবং সময় অনুযায়ী)
 const phases = [
-    { name: "Phase 1", start: '01/03/25 00:00:00', end: '18/03/25 23:59:59' },
-    { name: "Phase 2", start: '19/03/25 00:00:00', end: '08/04/25 23:59:59' },
-    { name: "Phase 3", start: '09/04/25 00:00:00', end: '03/05/25 23:59:59' },
-    { name: "Phase 4", start: '04/05/25 00:00:00', end: '07/05/25 23:59:59' },
-    { name: "Phase 5", start: '08/05/25 00:00:00', end: '11/05/25 23:59:59' }
+        { name: "Phase 1", start: "2025-10-19 00:00:00", end: "2025-11-02 23:59:59" },
+        { name: "Phase 2", start: "2025-11-03 00:00:00", end: "2025-11-25 23:59:59" },
+        { name: "Phase 3", start: "2025-11-26 00:00:00", end: "2025-12-19 23:59:59" },
+        { name: "Phase 4", start: "2025-12-20 00:00:00", end: "2026-01-30 23:59:59" },
+        { name: "Phase 5", start: "2026-01-31 00:00:00", end: "2025-01-31 23:59:59" }
 ];
 
 // তারিখ এবং সময় পার্সিং ফাংশন (DD/MM/YY HH:MM:SS ফরম্যাট)
